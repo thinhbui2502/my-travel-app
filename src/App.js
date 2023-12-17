@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Search from './components/Search';
+import Booking from './components/Booking';
+import Confirmation from './components/Confirmation';
+import HotelPage from './components/HotelPage'; // Import the HotelPage component
+
+import './App.css'; // Import the CSS file
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/search">Search</Link>
+            </li>
+            <li>
+              <Link to="/booking">Booking</Link>
+            </li>
+            <li>
+              <Link to="/hotels">Hotels</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <hr />
+
+        <Routes>
+          <Route path="/" element={<h2>Home</h2>} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/hotels" element={<HotelPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
