@@ -1,6 +1,5 @@
-context('Hotel Page', () => {
+describe('Hotel Page', () => {
   beforeEach(() => {
-    // Assuming your app is running on localhost:3000
     cy.visit('http://localhost:3000/hotels');
   });
 

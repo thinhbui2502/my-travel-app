@@ -6,10 +6,12 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const handleSearch = () => {
-    // Simulated search results for demonstration purposes
+    console.log(searchQuery);
+    // Query with search value
+    // Assum the results
     const results = [
-      { id: 1, name: 'Flight 1', price: '$200' },
-      { id: 2, name: 'Flight 2', price: '$250' },
+      { id: 1, name: searchQuery, price: '$200' },
+      { id: 2, name: `Likely ${searchQuery}`, price: '$250' },
       // Add more results as needed
     ];
 
